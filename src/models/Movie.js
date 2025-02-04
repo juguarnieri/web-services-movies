@@ -1,12 +1,11 @@
 const { v4: uuid4 } = require("uuid");
-
 class Movie {
-    constructor(title, actor, duration, gender = 0) {
+    constructor(title, actor, duration, gender = "Unknown") {
         this.id = uuid4();
         this.title = title;
-        this.singer = singer;
+        this.actor = actor;  
         this.duration = duration;
-        this.plays = plays;
+        this.gender = gender;  
     }
 }
 
