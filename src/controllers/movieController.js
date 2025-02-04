@@ -47,4 +47,32 @@ const router = {
             });
         }
     },
-}
+
+    updateMovie: (req, res) => {
+        try {
+            res.status(200).json(lista.updateMovie(req.params.id, req.body));
+        } catch (error) {
+            res.status(404).json({
+                message: "Erro ao atualizar filme",
+                error: error.message,
+            });
+        }
+    },
+    deleteMovie: (req, res) => {
+        try {
+            const movie = req.params.id;
+            lista.deleteMovie(movie);
+            res.status(200).json({
+                message: "Filme deletado com sucesso",
+                movie,
+            });
+        } catch (error) {
+            res.status(404).json({
+                message: "Erro ao deletar filme",
+                error: error.message,
+            });
+        }
+    },
+};
+
+module.exports = router;
