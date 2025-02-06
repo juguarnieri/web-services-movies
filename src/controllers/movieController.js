@@ -15,9 +15,9 @@ const router = {
             if (!title || !actor || !duration || !gender) {
                 throw new Error("Preencha todos os campos!");
             }
-            const movie = new Movie(title, actor, duration, gender);
-            lista.addMovie(movie);
-            res.status(200).json({ message: "Filme adicionado com sucesso", movie });
+            const film = new Movie(title, actor, duration, gender);
+            lista.addMovie(film);
+            res.status(200).json({ message: "Filme adicionado com sucesso", film });
         } catch (error) {
             res.status(400).json({
                 message: "Erro ao adicionar filme",
@@ -39,6 +39,7 @@ const router = {
     getMovieById: (req, res) => {
         try {
             const id = req.params.id;
+            console.log(id);
             res.status(200).json(lista.getMovieById(id));
         } catch (error) {
             res.status(404).json({
