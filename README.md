@@ -1,8 +1,9 @@
 # 📌 BACK-END- WEB-SERVICES- ATIVIDADE 1
-## 📌 Diagrama de Classes
+## 😉 Diagrama de Classes
+
+### 📂 Arquitetura MVC
 
 ```plaintext
-Arquitetura MVC
 src/
 ├── controllers/
 │   ├── movieController.js
@@ -24,7 +25,7 @@ GET http://localhost:3000/
 
 **Descrição**: Testa o servidor para garantir que ele está funcionando.
 
-![Teste Servidor](path/to/image.jpg)
+![image](https://github.com/user-attachments/assets/1dc62ad9-4a0d-4a41-899a-add44b072a2d)
 
 ---
 
@@ -36,7 +37,7 @@ GET http://localhost:3000/api/movies
 
 **Descrição**: Lista todos os filmes disponíveis na base de dados.
 
-![Listar Todos](path/to/image.jpg)
+![image](https://github.com/user-attachments/assets/56de0fe2-88a4-45a4-a42e-b5deafc791d6)
 
 ---
 
@@ -51,7 +52,7 @@ GET http://localhost:3000/movies/{id}
 
 **Descrição**: Encontra um filme específico pelo ID fornecido.
 
-![Encontrar pelo ID](path/to/image.jpg)
+![image](https://github.com/user-attachments/assets/4e35ccce-4658-4731-8395-222c4bb231a2)
 
 ---
 
@@ -73,7 +74,7 @@ POST http://localhost:3000/api/movies/
 
 **Descrição**: Adiciona um novo filme à base de dados.
 
-![Adicionar Filme](path/to/image.jpg)
+![image](https://github.com/user-attachments/assets/7df264e4-02ca-4174-8e00-af55fca12b40)
 
 ---
 
@@ -98,7 +99,7 @@ PUT http://localhost:3000/api/movies/{id}
 
 **Descrição**: Atualiza um filme na base de dados.
 
-![Atualizar Filme](path/to/image.jpg)
+![image](https://github.com/user-attachments/assets/8f0f9387-92d9-4a67-b5f2-86645c9af0c4)
 
 ---
 
@@ -113,13 +114,13 @@ DELETE http://localhost:3000/api/movies/{id}
 
 **Descrição**: Deleta um filme específico da base de dados.
 
-![Deletar Filme](path/to/image.jpg)
+![image](https://github.com/user-attachments/assets/bc1e4faf-a790-469a-8b98-d53de6db4911)
 
 ---
 
-## 📌 Respostas da API
+## 📌 XML
 
-### ✅ Resposta de Sucesso - Adicionar um Filme
+### ✅ Adicionar um Filme
 
 ```xml
 <Response>
@@ -133,7 +134,7 @@ DELETE http://localhost:3000/api/movies/{id}
 </Response>
 ```
 
-### ✅ Resposta de Sucesso - Obter Todos os Filmes
+### ✅ Obter Todos os Filmes
 
 ```xml
 <MovieList>
@@ -152,7 +153,7 @@ DELETE http://localhost:3000/api/movies/{id}
 </MovieList>
 ```
 
-### ✅ Resposta de Sucesso - Obter um Filme por ID
+### ✅ Obter um Filme por ID
 
 ```xml
 <Movie>
@@ -163,7 +164,7 @@ DELETE http://localhost:3000/api/movies/{id}
 </Movie>
 ```
 
-### ✅ Resposta de Sucesso - Atualizar um Filme
+### ✅ Atualizar um Filme
 
 ```xml
 <Response>
@@ -177,7 +178,7 @@ DELETE http://localhost:3000/api/movies/{id}
 </Response>
 ```
 
-### ✅ Resposta de Sucesso - Deletar um Filme
+### ✅ Deletar um Filme
 
 ```xml
 <Response>
@@ -186,7 +187,7 @@ DELETE http://localhost:3000/api/movies/{id}
 </Response>
 ```
 
-### ❌ Resposta de Erro - Filme não encontrado
+### ❌ Filme não encontrado
 
 ```xml
 <ErrorResponse>
