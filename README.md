@@ -1,34 +1,65 @@
-# Endpoints da API
+# 📌 BACK-END- WEB-SERVICES- ATIVIDADE 1
+## 📌 Diagrama de Classes
 
-## GET - Teste Servidor
-`GET http://localhost:3000/`
+```plaintext
+Arquitetura MVC
+src/
+├── controllers/
+│   ├── movieController.js
+├── models/
+│   ├── Movie.js
+│   ├── MovieList.js
+├── routes/
+│   ├── MovieRoutes.js
+├── server.js
+```
+![image](https://github.com/user-attachments/assets/b5defc60-9fa4-48c4-be63-45dee5c64c29)
+
+
+### 🎬 Teste Servidor
+
+```http
+GET http://localhost:3000/
+```
 
 **Descrição**: Testa o servidor para garantir que ele está funcionando.
 
-![Imagem Teste Servidor](path/to/image1.jpg)
+![Teste Servidor](path/to/image.jpg)
 
 ---
 
-## GET - Listar Todos
-`GET http://localhost:3000/api/movies`
+### 🎬 Listar Todos os Filmes
+
+```http
+GET http://localhost:3000/api/movies
+```
 
 **Descrição**: Lista todos os filmes disponíveis na base de dados.
 
-![Imagem Listar Todos](path/to/image2.jpg)
+![Listar Todos](path/to/image.jpg)
 
 ---
 
-## GET - Encontrar pelo ID
-`GET http://localhost:3000/movies/7d2a3a82-93d3-42de-9e83-8599328960af`
+### 🎬 Encontrar um Filme pelo ID
+
+```http
+GET http://localhost:3000/movies/{id}
+```
+
+**Parâmetros**:
+- `{id}`: ID do filme a ser buscado.
 
 **Descrição**: Encontra um filme específico pelo ID fornecido.
 
-![Imagem Encontrar pelo ID](path/to/image3.jpg)
+![Encontrar pelo ID](path/to/image.jpg)
 
 ---
 
-## POST - Adicionar Filme
-`POST http://localhost:3000/api/movies/`
+### 🎬 Adicionar um Filme
+
+```http
+POST http://localhost:3000/api/movies/
+```
 
 **Body (JSON):**
 ```json
@@ -39,52 +70,58 @@
     "gender": "Romance"
 }
 ```
-Descrição: Adiciona um novo filme à base de dados.
+
+**Descrição**: Adiciona um novo filme à base de dados.
+
+![Adicionar Filme](path/to/image.jpg)
 
 ---
 
-### PUT - Atualizar Filme
+### 🎬 Atualizar um Filme
 
-`PUT https://postman-rest-api-learner.glitch.me/info?id=1`
+```http
+PUT http://localhost:3000/api/movies/{id}
+```
 
-*Query Params*: `id=1`
+**Parâmetros**:
+- `{id}`: ID do filme a ser atualizado.
 
-*Body (JSON)*:
+**Body (JSON):**
 ```json
 {
-    "name": "Add your name in the body"
+    "title": "Nome Atualizado do Filme",
+    "actor": "Nome Atualizado do Ator",
+    "duration": "Nova Duração",
+    "gender": "Novo Gênero"
 }
 ```
-*Descrição*: Atualiza um filme na base de dados.
 
-![Imagem Encontrar pelo ID](path/to/image3.jpg)
----
+**Descrição**: Atualiza um filme na base de dados.
 
-DELETE - Deletar Filme
-
-DELETE https://postman-rest-api-learner.glitch.me/info?id=1
-
-Descrição: Deleta um filme específico da base de dados.
-
+![Atualizar Filme](path/to/image.jpg)
 
 ---
 
+### 🎬 Deletar um Filme
 
+```http
+DELETE http://localhost:3000/api/movies/{id}
+```
 
+**Parâmetros**:
+- `{id}`: ID do filme a ser deletado.
+
+**Descrição**: Deleta um filme específico da base de dados.
+
+![Deletar Filme](path/to/image.jpg)
 
 ---
 
-🎬 API de Gerenciamento de Filmes
+## 📌 Respostas da API
 
-Esta API permite adicionar, listar, buscar, atualizar e deletar filmes. As respostas são retornadas no formato XML.
+### ✅ Resposta de Sucesso - Adicionar um Filme
 
-📌 Endpoints
-
-✅ Adicionar um Filme
-
-Rota: POST /movies
-Resposta de Sucesso:
-
+```xml
 <Response>
     <Message>Filme adicionado com sucesso</Message>
     <Movie>
@@ -94,15 +131,11 @@ Resposta de Sucesso:
         <Genre>Gênero</Genre>
     </Movie>
 </Response>
+```
 
+### ✅ Resposta de Sucesso - Obter Todos os Filmes
 
----
-
-📌 Obter Todos os Filmes
-
-Rota: GET /movies
-Resposta:
-
+```xml
 <MovieList>
     <Movie>
         <Title>Gente Grande</Title>
@@ -117,30 +150,22 @@ Resposta:
         <Genre>Comédia, Mistério</Genre>
     </Movie>
 </MovieList>
+```
 
+### ✅ Resposta de Sucesso - Obter um Filme por ID
 
----
-
-📌 Obter um Filme por ID
-
-Rota: GET /movies/:id
-Resposta:
-
+```xml
 <Movie>
     <Title>Gente Grande</Title>
     <Actor>Adam Sandler</Actor>
     <Duration>01:46:22</Duration>
     <Genre>Comédia</Genre>
 </Movie>
+```
 
+### ✅ Resposta de Sucesso - Atualizar um Filme
 
----
-
-📌 Atualizar um Filme
-
-Rota: PUT /movies/:id
-Resposta de Sucesso:
-
+```xml
 <Response>
     <Message>Filme atualizado com sucesso</Message>
     <UpdatedMovie>
@@ -150,31 +175,23 @@ Resposta de Sucesso:
         <Genre>Novo Gênero</Genre>
     </UpdatedMovie>
 </Response>
+```
 
+### ✅ Resposta de Sucesso - Deletar um Filme
 
----
-
-📌 Deletar um Filme
-
-Rota: DELETE /movies/:id
-Resposta de Sucesso:
-
+```xml
 <Response>
     <Message>Filme deletado com sucesso</Message>
     <MovieID>123</MovieID>
 </Response>
+```
 
+### ❌ Resposta de Erro - Filme não encontrado
 
----
-
-❌ Resposta de Erro
-
-Exemplo: Filme não encontrado
-
+```xml
 <ErrorResponse>
     <Message>Erro ao buscar filme por ID</Message>
     <Error>Filme não encontrado</Error>
 </ErrorResponse>
-
-
+```
 ---
