@@ -19,6 +19,29 @@ src/
 ├── server.js
 ```
 
+### ✨ Dependências:
+
+```
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
+    "uuid": "^11.0.5"
+  }
+```
+
+### ✅ Routes:
+
+```
+router.get("/movies", movieController.getAllMovies);
+router.post("/movies", movieController.addMovie);
+router.put("/movies/:id", movieController.updateMovie);
+router.delete("/movies/:id", movieController.deleteMovie);
+router.get("/movies/:id", movieController.getMovieById);
+
+```
+
 ### 🎬 Teste Servidor
 
 ```http
