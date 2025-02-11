@@ -1,6 +1,10 @@
 # 📌 BACK-END- WEB-SERVICES- ATIVIDADE 1
 ## 😉 Diagrama de Classes
 
+<img width="339" alt="image" src="https://github.com/user-attachments/assets/bbd91b9d-3fe4-4209-8bbe-4e42754a4746" />
+
+
+
 ### 📂 Arquitetura MVC
 
 ```plaintext
@@ -14,8 +18,6 @@ src/
 │   ├── MovieRoutes.js
 ├── server.js
 ```
-![image](https://github.com/user-attachments/assets/b5defc60-9fa4-48c4-be63-45dee5c64c29)
-
 
 ### 🎬 Teste Servidor
 
